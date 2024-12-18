@@ -35,16 +35,7 @@
 </body>
 
 <script>
-    document.title = "当前时间: ";
 
-    function updateTitleWithTime() {
-        var currentTime = new Date().toLocaleTimeString();
-        document.title = "当前时间: " + currentTime;
-        $(".changeSkinColor").css("background-color", "#6088CC");
-        $(".moreInfo").html("查看更多");
-    }
-
-    setInterval(updateTitleWithTime, 1000); // 每秒更新时间
 </script>
 
 </html>
